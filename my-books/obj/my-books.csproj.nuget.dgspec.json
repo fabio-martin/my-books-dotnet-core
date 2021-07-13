@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books\\my-books\\my-books.csproj": {}
+    "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books-dotnet-core\\my-books\\my-books.csproj": {}
   },
   "projects": {
-    "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books\\my-books\\my-books.csproj": {
+    "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books-dotnet-core\\my-books\\my-books.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books\\my-books\\my-books.csproj",
+        "projectUniqueName": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books-dotnet-core\\my-books\\my-books.csproj",
         "projectName": "my-books",
-        "projectPath": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books\\my-books\\my-books.csproj",
+        "projectPath": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books-dotnet-core\\my-books\\my-books.csproj",
         "packagesPath": "C:\\Users\\Fabio\\.nuget\\packages\\",
-        "outputPath": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books\\my-books\\obj\\",
+        "outputPath": "C:\\SandBox\\NetCoreFirstProject\\my-books\\my-books-dotnet-core\\my-books\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fabio\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"

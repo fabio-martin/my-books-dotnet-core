@@ -11,14 +11,20 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using my_books.Data.Models;
 
 namespace my_books
 {
     public class Startup
     {
+
+        public string ConnectionString { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ConnectionString = Configuration.GetConnectionString("DefaultConnectionString");
         }
 
         public IConfiguration Configuration { get; }
@@ -28,6 +34,10 @@ namespace my_books
         {
 
             services.AddControllers();
+
+            // Configure DbContext with SQL 
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "my_books", Version = "v1" });
