@@ -19,5 +19,9 @@ namespace my_books.Data.Models
         public string CoverUrl { get; set; }
         public DateTime DateAdded { get; set; }
 
+        // Navigation Publisher
+        public int PublisherId { get; set; }
+
+        public Publisher Publisher { get; set; }
     }
 }
