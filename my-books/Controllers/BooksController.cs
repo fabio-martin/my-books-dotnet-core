@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Threading.Tasks;
 using my_books.Data.Services;
 using my_books.Data.ViewModels;
@@ -27,10 +28,10 @@ namespace my_books.Controllers
             return Ok(allBooks);
         }
 
-        [HttpGet("get-book-by-id/{id}")]
-        public IActionResult GetBookById(int id)
+        [HttpGet("get-book-by-id/{bookId}")]
+        public IActionResult GetBookById(int bookId)
         {
-            var book = _booksService.GetBookById(id);
+            var book = _booksService.GetBookById(bookId);
             return Ok(book);
         }
 
@@ -47,6 +48,14 @@ namespace my_books.Controllers
             var updatedBook = _booksService.UpdateBookById(bookId, book);
             return Ok(updatedBook);
         }
+
+        [HttpDelete("delete-book-by-id/{bookId}")]
+        public IActionResult DeleteBookById(int bookId)
+        {
+            _booksService.DeleteBookById(bookId);
+            return Ok();
+        }
+
 
 
 

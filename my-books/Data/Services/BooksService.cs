@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using my_books.Data.Models;
 using my_books.Data.ViewModels;
 
@@ -58,6 +59,17 @@ namespace my_books.Data.Services
             }
 
             return _book;
+
+        }
+
+        public void DeleteBookById(int bookId)
+        {
+            var _book = _context.Books.FirstOrDefault(b => b.Id == bookId);
+            if (_book != null)
+            {
+                _context.Books.Remove(_book);
+                _context.SaveChanges();
+            }
 
         }
 
