@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using my_books.Data;
 using my_books.Data.Models;
+using my_books.Data.Services;
 
 namespace my_books
 {
@@ -38,6 +39,9 @@ namespace my_books
 
             // Configure DbContext with SQL 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            // Configure services
+            services.AddTransient<BooksService>();
 
             services.AddSwaggerGen(c =>
             {
